@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#212121"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.rexhe.watermeter.Payment">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Account Details"
+        android:textColor="@color/green"
+        android:id="@+id/accountTV"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:layout_below="@+id/accountTV"
+        android:id="@+id/accountLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            card_view:cardBackgroundColor="#424242"
+            card_view:cardCornerRadius="5dp"
+            card_view:cardPreventCornerOverlap="true"
+            card_view:cardUseCompatPadding="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/profileTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-thin"
+                    android:text="Your Profile"
+                    android:textColor="@color/green"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_gravity="center"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/idNameTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="Account ID : "
+                        android:textColor="@color/green"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_gravity="left"/>
+                    <TextView
+                        android:id="@+id/idTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:text="FRT685959"
+                        android:textColor="#F44336"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_gravity="right"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/accountLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/infoTV"
+        android:text=" Device Details"
+        android:textColor="@color/green"
+        />
+
+    <LinearLayout
+        android:id="@+id/deviceLL"
+        android:layout_below="@+id/infoTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardview2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            card_view:cardBackgroundColor="#424242"
+            card_view:cardCornerRadius="5dp"
+            card_view:cardPreventCornerOverlap="true"
+            card_view:cardUseCompatPadding="false">
+
+
+            <LinearLayout
+                android:id="@+id/firstLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-thin"
+                        android:textColor="@color/green"
+                        android:text="Current Flow Rate : (Litre/Hr)                  "
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <TextView
+                        android:id="@+id/flowRate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.00"
+                        android:textColor="@color/cyan"
+                        android:fontFamily="sans-serif-light"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/secondLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Consumed Water : (Today)            "
+                        android:fontFamily="sans-serif-thin"
+                        android:textColor="@color/green"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        />
+                    <TextView
+                        android:id="@+id/daily"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.00"
+                        android:fontFamily="sans-serif-light"
+                        android:textColor="@color/cyan"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/thirdLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Consumed Water:(This Month)  "
+                        android:fontFamily="sans-serif-thin"
+                        android:textColor="@color/green"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        />
+                    <TextView
+                        android:id="@+id/monthly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.00"
+                        android:textColor="@color/cyan"
+                        android:fontFamily="sans-serif-light"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/deviceLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/paymentTV"
+        android:text=" Payment Details"
+        android:textColor="@color/green"
+        />
+    <LinearLayout
+        android:layout_below="@+id/paymentTV"
+        android:id="@+id/paymentLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardview3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            card_view:cardBackgroundColor="#424242"
+            card_view:cardCornerRadius="5dp"
+            card_view:cardPreventCornerOverlap="true"
+            card_view:cardUseCompatPadding="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/payInfoTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="Payment for this month (BDT):          "
+                        android:textColor="@color/green"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_gravity="left"/>
+                    <TextView
+                        android:id="@+id/bill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/cyan"
+                        android:fontFamily="sans-serif-light"
+                        android:text="0.00"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_gravity="right"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+</RelativeLayout>
