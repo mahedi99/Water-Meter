@@ -17,6 +17,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.rexhe.network.GetUserLogin;
+
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
@@ -155,7 +157,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         txtv.setTextColor(Color.CYAN);
     }
 
-    void saveInSharedPreference()
+    public void saveInSharedPreference()
     {
         if (email!=""&& password!="") {
             SharedPreferences shared = getSharedPreferences(MY_PREFS_FILE, MODE_PRIVATE);

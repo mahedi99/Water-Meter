@@ -5,22 +5,24 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.rexhe.network.GetData;
+import com.example.rexhe.utils.Preferences;
 import com.github.glomadrian.velocimeterlibrary.VelocimeterView;
 
 import org.json.JSONArray;
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity{
 
     private VelocimeterView velocimeter;
     private GetData getData;
-    private CoordinatorLayout coordinatorLayout;
+    private LinearLayout mainLinearLayout;
     private SwipeRefreshLayout swipeContainer;
     private TextView dayDigit;
     private TextView monthDigit;
@@ -47,16 +49,18 @@ public class MainActivity extends AppCompatActivity{
     private HashMap<String, String> userInfo;
     private List<HashMap<String, String>> infoList;
 
-    double l_hour;
-    int currentFlowFreq=0;
-    float dailyConsumedWater=0;
-    float monthlyConsumedWater=0;
-    float bill=0;
-    int litre=0;
+    private double l_hour;
+    private int currentFlowFreq=0;
+    private float dailyConsumedWater=0;
+    private float monthlyConsumedWater=0;
+    private float bill=0;
+    private int litre=0;
     private Bundle bundle;
 
     public static final String MY_PREFS_FILE = "loginInfo";
     public static final String MY_PREFS_COLOR = "mycolor";
+
+    private Toolbar toolbar;
 
 
     @Override
@@ -64,13 +68,9 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Changing ActionBar Color
-        actionBar=getSupportActionBar();
-        SharedPreferences shared = getSharedPreferences(MY_PREFS_COLOR, MODE_PRIVATE);
-        if (shared!=null) {
-            int getColor = (shared.getInt("position", 0));
-            actionBar.setBackgroundDrawable(new ColorDrawable(getColor));
-        }
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setBackgroundColor(Preferences.getInstance().getToolbarColor());
 
 
         initialize();
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity{
 
     public void initialize()
     {
-        coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
+        mainLinearLayout = (LinearLayout) findViewById(R.id.main_layout);
         swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipeRefresh);
         swipeContainer.setColorSchemeResources(
                 R.color.green,
@@ -206,7 +206,7 @@ public class MainActivity extends AppCompatActivity{
         }
         if (id == R.id.settings)
         {
-            Intent intent = new Intent(MainActivity.this, Settings.class);
+            Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
             finish();
             startActivity(intent);
             return true;
@@ -217,14 +217,14 @@ public class MainActivity extends AppCompatActivity{
             bundle.putFloat("daily", dailyConsumedWater);
             bundle.putFloat("monthly", monthlyConsumedWater);
             bundle.putFloat("bill",bill);
-            Intent intent = new Intent(MainActivity.this, Payment.class);
+            Intent intent = new Intent(MainActivity.this, PaymentActivity.class);
             intent.putExtras(bundle);
             startActivity(intent);
             return true;
         }
         if (id ==R.id.about)
         {
-            Intent intent = new Intent(MainActivity.this, About.class);
+            Intent intent = new Intent(MainActivity.this, AboutActivity.class);
             startActivity(intent);
             return true;
         }
@@ -287,7 +287,7 @@ public class MainActivity extends AppCompatActivity{
 
     public void alertDialog(String message)
     {
-        Snackbar snackbar = Snackbar.make(findViewById(R.id.coordinatorLayout), message, Snackbar.LENGTH_SHORT);
+        Snackbar snackbar = Snackbar.make(findViewById(R.id.main_layout), message, Snackbar.LENGTH_SHORT);
         snackbar.show();
         View view = snackbar.getView();
         TextView txtv = (TextView) view.findViewById(android.support.design.R.id.snackbar_text);

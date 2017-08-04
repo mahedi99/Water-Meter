@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name="com.example.rexhe.application.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,8 +17,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".LoginActivity"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+            android:label="@string/app_name">
         </activity>
         <activity
             android:name=".MainActivity"
@@ -25,8 +25,7 @@
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".SplahScreen"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+            android:name=".SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,22 +33,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ViewDetails"
+            android:name=".AccountDetailsActivity"
             android:label="Details" >
         </activity>
         <activity
             android:screenOrientation="portrait"
             android:label="Settings"
-            android:name=".Settings" >
+            android:name=".SettingsActivity" >
         </activity>
         <activity
             android:screenOrientation="portrait"
             android:label="Payment"
-            android:name=".Payment" >
+            android:name=".PaymentActivity" >
         </activity>
         <activity
             android:label="About"
-            android:name=".About" >
+            android:name=".AboutActivity" >
         </activity>
     </application>
 
