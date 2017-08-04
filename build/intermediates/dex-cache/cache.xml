@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/opt/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="/home/mahedi/AndroidProjetsOld/Water Meter/WaterMeter/app/build/intermediates/pre-dexed/debug/support-annotations-23.2.1_8a5002a5f81a7e0e6a4bdf249c234dae94529e1c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/mahedi/.android/build-cache/9e879631f1e4dfc9249252242892bdf716cc0263/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e3885783ff8926ed9e2fdcd16816c2e1e73e7aee">
+        <dex dex="/home/mahedi/AndroidProjetsOld/Water Meter/WaterMeter/app/build/intermediates/pre-dexed/debug/classes_7ef2d50fb80309e483dcb195e46d7d4bcc959828.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/mahedi/.android/build-cache/838c1b597ee888b6bbfa9361197d79cced9c5cd4/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="/home/mahedi/AndroidProjetsOld/Water Meter/WaterMeter/app/build/intermediates/pre-dexed/debug/classes_a0b1d7b3227b37094e23af506f726715524f259b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/mahedi/.android/build-cache/dd033307a9ac60bf2c48412df9440ac8e546977f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="/home/mahedi/AndroidProjetsOld/Water Meter/WaterMeter/app/build/intermediates/pre-dexed/debug/classes_45674fb06dae420844d95e4c65328262bba1d923.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/mahedi/.android/build-cache/57e5b0e3de66665198483065c42b33205a856fbb/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="/home/mahedi/AndroidProjetsOld/Water Meter/WaterMeter/app/build/intermediates/pre-dexed/debug/classes_c4eed27f71a852df38a8f21ebaa1374a0e0c92db.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/mahedi/.android/build-cache/838c1b597ee888b6bbfa9361197d79cced9c5cd4/output/jars/libs/internal_impl-23.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="/home/mahedi/AndroidProjetsOld/Water Meter/WaterMeter/app/build/intermediates/pre-dexed/debug/internal_impl-23.2.1_886e32669900428f4da7f1c034aefe8446b2061a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/mahedi/.android/build-cache/980d814c18f49562d78468a5037ab52334114c13/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="39ae02ce40c3ac828abbf780ce0ff5d7a28b7d6a">
+        <dex dex="/home/mahedi/AndroidProjetsOld/Water Meter/WaterMeter/app/build/intermediates/pre-dexed/debug/classes_e5b20c0ef828a8306b16b90cf5a529ac00fb4fdd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/mahedi/.android/build-cache/b800d1e8ff77208099289cc49d78f52418b409c6/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a7ebdfd0fccafd0e655eaa4c54ad48ad833b84c4">
+        <dex dex="/home/mahedi/AndroidProjetsOld/Water Meter/WaterMeter/app/build/intermediates/pre-dexed/debug/classes_e9770432d431b23d43a97e073e02fc2983b19258.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/mahedi/.android/build-cache/c50eedcba905f44d0c3ddeca1b5f3c2cd0c9f10c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="936e531cbb9417ad31c52f01a7a26dc52b487c9e">
+        <dex dex="/home/mahedi/AndroidProjetsOld/Water Meter/WaterMeter/app/build/intermediates/pre-dexed/debug/classes_ac5b8115d0b9aeec51b1e6163d8c5a86415bfe93.jar" />
+    </item>
+
+</items>
