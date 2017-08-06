@@ -1,19 +1,28 @@
 package com.example.rexhe.watermeter;
 
 import android.animation.ValueAnimator;
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +32,7 @@ import android.widget.Toast;
 
 import com.example.rexhe.network.GetData;
 import com.example.rexhe.utils.Preferences;
+import com.example.rexhe.utils.Utils;
 import com.github.glomadrian.velocimeterlibrary.VelocimeterView;
 
 import org.json.JSONArray;
@@ -230,12 +240,61 @@ public class MainActivity extends AppCompatActivity{
         }
         if (id ==R.id.about)
         {
-            Intent intent = new Intent(MainActivity.this, AboutActivity.class);
-            startActivity(intent);
+            showAboutDialog();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showAboutDialog() {
+//        String message = getResources().getString(R.string.link_google);
+//        final SpannableString s = new SpannableString(message);
+//        Linkify.addLinks(s, Linkify.ALL);
+//        AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+//        alertDialog.setTitle(getResources().getString(R.string.app_name));
+////        alertDialog.setMessage("Version : "+ Utils.getVersion(this) +"\n\nIcon credit: https://www.flaticon.com");
+//        alertDialog.setMessage(message);
+//        alertDialog.show();
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(getResources().getString(R.string.app_name));
+        LayoutInflater inflater = MainActivity.this.getLayoutInflater();
+        View layout = inflater.inflate(R.layout.activity_about, null);
+
+        TextView messageTV = (TextView) layout.findViewById(R.id.about_tv);
+        messageTV.setText("Version : "+ Utils.getVersion(MainActivity.this));
+        messageTV.append("\nDeveloped by : ");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            messageTV.append(Html.fromHtml("<a href=\"http://www.fb.com/h.mahedi.h\">Mahedi Hassan</a>", Html.FROM_HTML_MODE_LEGACY));
+        }
+        else {
+            messageTV.append(Html.fromHtml("<a href=\"http://www.fb.com/h.mahedi.h\">Mahedi Hassan</a>"));
+        }
+        messageTV.append("\n\nIcon credit : ");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
+            messageTV.append(Html.fromHtml("<a href=\"http://www.flaticon.com\">Flaticon</a>", Html.FROM_HTML_OPTION_USE_CSS_COLORS));
+        }
+        else {
+            messageTV.append(Html.fromHtml("<a href=\"http://www.flaticon.com\">Flaticon</a>"));
+        }
+        builder.setView(layout);
+        builder.show();
+
+        messageTV.setMovementMethod(LinkMovementMethod.getInstance());
+
+//        final AlertDialog.Builder d = new AlertDialog.Builder(this);
+//                d.setPositiveButton(android.R.string.ok, null).
+//                //.setIcon(R.drawable.icon)
+//                setMessage(Html.fromHtml("<a href=\"http://www.google.com\">Check this link out</a>")).show();
+//        AlertDialog alertDialog = d.create();
+//
+//        alertDialog.show();
+//
+//// Make the textview clickable. Must be called after show()
+//        ((TextView)alertDialog.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
+
     }
 
     public void resultPackage(JSONArray jsonArray)

@@ -42,10 +42,6 @@
             android:label="Payment"
             android:name=".PaymentActivity" >
         </activity>
-        <activity
-            android:label="About"
-            android:name=".AboutActivity" >
-        </activity>
     </application>
 
 </manifest>
