@@ -225,6 +225,7 @@ public class MainActivity extends AppCompatActivity{
             Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
 //            finish();
             startActivity(intent);
+            overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_left);
             return true;
         }
         if (id ==R.id.payment)
@@ -236,6 +237,7 @@ public class MainActivity extends AppCompatActivity{
             Intent intent = new Intent(MainActivity.this, PaymentActivity.class);
             intent.putExtras(bundle);
             startActivity(intent);
+            overridePendingTransition(R.anim.anim_slide_in_left, R.anim.anim_slide_out_left);
             return true;
         }
         if (id ==R.id.about)
@@ -248,16 +250,6 @@ public class MainActivity extends AppCompatActivity{
     }
 
     private void showAboutDialog() {
-//        String message = getResources().getString(R.string.link_google);
-//        final SpannableString s = new SpannableString(message);
-//        Linkify.addLinks(s, Linkify.ALL);
-//        AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-//        alertDialog.setTitle(getResources().getString(R.string.app_name));
-////        alertDialog.setMessage("Version : "+ Utils.getVersion(this) +"\n\nIcon credit: https://www.flaticon.com");
-//        alertDialog.setMessage(message);
-//        alertDialog.show();
-
-
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(getResources().getString(R.string.app_name));
         LayoutInflater inflater = MainActivity.this.getLayoutInflater();
@@ -283,18 +275,6 @@ public class MainActivity extends AppCompatActivity{
         builder.show();
 
         messageTV.setMovementMethod(LinkMovementMethod.getInstance());
-
-//        final AlertDialog.Builder d = new AlertDialog.Builder(this);
-//                d.setPositiveButton(android.R.string.ok, null).
-//                //.setIcon(R.drawable.icon)
-//                setMessage(Html.fromHtml("<a href=\"http://www.google.com\">Check this link out</a>")).show();
-//        AlertDialog alertDialog = d.create();
-//
-//        alertDialog.show();
-//
-//// Make the textview clickable. Must be called after show()
-//        ((TextView)alertDialog.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
-
     }
 
     public void resultPackage(JSONArray jsonArray)

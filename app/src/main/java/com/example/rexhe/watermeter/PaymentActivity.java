@@ -52,7 +52,7 @@ public class PaymentActivity extends AppCompatActivity {
 
         float abc =  Math.round(flowRateValue);
         DecimalFormat form = new DecimalFormat("0.00");
-        flowRate.setText(String.valueOf(abc));
+        flowRate.setText(String.format( "%.2f", abc ));
         daily.setText(form.format(dailyValue));
         monthly.setText(form.format(monthlyValue));
         bill.setText(form.format(billValue));
@@ -63,6 +63,12 @@ public class PaymentActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         toolbar.setBackgroundColor(Preferences.getInstance().getToolbarColor());
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right);
     }
 
     public void initialize()

@@ -15,9 +15,6 @@
     </string>
     <string name="title_activity_main">Water Meter</string>
 
-    <string name="link"><a href="http://www.www.com" >ForGet Password</a></string>
-    <string name="link_google"><a href="http://www.google.com">Check this link out</a></string>
-
     <!--DB name: labcom_water_meter, username : labcom_waterUser,   Password : labcomwateruser12345-->
 
 </resources>

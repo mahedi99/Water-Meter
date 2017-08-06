@@ -10,16 +10,15 @@ import android.util.Log;
 import com.example.rexhe.watermeter.MainActivity;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
-
 
 
 /**
@@ -44,6 +43,7 @@ public class GetData extends AsyncTask<String, String, JSONArray> {
     private static final String TAG_USER_ID = "userid=";
 
     private boolean internetConnection = true;
+    private boolean jsonException = false;
 
     public GetData(MainActivity mainActivity, int userId)
     {
@@ -77,6 +77,8 @@ public class GetData extends AsyncTask<String, String, JSONArray> {
                 Log.v("Result-2 : ", String.valueOf(jsonArr));
                 id=1;
 
+            } catch (JSONException e){
+                jsonException = true;
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -90,10 +92,16 @@ public class GetData extends AsyncTask<String, String, JSONArray> {
 
     protected void onPostExecute(JSONArray result) {
 
-        if (id==-1 || id==0 || internetConnection==false)
+        if ( internetConnection==false)
         {
             Log.v("Result ", "Failed To Connect");
-            mainActivity.alertDialog("Please Check the Internet Connection");
+            mainActivity.alertDialog("No internet!");
+        }
+        else if (jsonException == true){
+            mainActivity.alertDialog("Data not found!");
+        }
+        else if (id==-1 || id==0){
+            mainActivity.alertDialog("Unknown error!");
         }
         else {
 
@@ -126,13 +134,9 @@ public class GetData extends AsyncTask<String, String, JSONArray> {
 
             rawUrlData = BufferData.toString();
 
-        } catch (FileNotFoundException e)
-        {
+        } catch (FileNotFoundException e) {
             mainActivity.alertDialog("Server Not found");
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (Exception e)
-        {
+        } catch (Exception e) {
             internetConnection = false;
         }
         return  rawUrlData;
