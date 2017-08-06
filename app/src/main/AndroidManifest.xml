@@ -33,10 +33,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AccountDetailsActivity"
-            android:label="Details" >
-        </activity>
-        <activity
             android:screenOrientation="portrait"
             android:label="Settings"
             android:name=".SettingsActivity" >

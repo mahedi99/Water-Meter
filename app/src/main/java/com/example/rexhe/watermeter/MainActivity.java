@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity{
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setBackgroundColor(Preferences.getInstance().getToolbarColor());
+//        toolbar.setBackgroundColor(Preferences.getInstance().getToolbarColor());
 
 
         initialize();
@@ -96,6 +96,12 @@ public class MainActivity extends AppCompatActivity{
         });
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        toolbar.setBackgroundColor(Preferences.getInstance().getToolbarColor());
     }
 
     public void initialize()
@@ -207,7 +213,7 @@ public class MainActivity extends AppCompatActivity{
         if (id == R.id.settings)
         {
             Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
-            finish();
+//            finish();
             startActivity(intent);
             return true;
         }

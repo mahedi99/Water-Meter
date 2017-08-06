@@ -5,25 +5,28 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
+
+import com.example.rexhe.utils.Preferences;
 
 import java.text.DecimalFormat;
 
 public class PaymentActivity extends AppCompatActivity {
 
 
-    TextView flowRate;
-    TextView daily;
-    TextView monthly;
-    TextView bill;
+    private TextView flowRate;
+    private TextView daily;
+    private TextView monthly;
+    private TextView bill;
 
-    Double flowRateValue;
-    float dailyValue;
-    float monthlyValue;
-    float billValue;
+    private Double flowRateValue;
+    private float dailyValue;
+    private float monthlyValue;
+    private float billValue;
 
+    private Toolbar toolbar;
 
-    private ActionBar actionBar;
     public static final String MY_PREFS_COLOR = "mycolor";
 
     @Override
@@ -35,12 +38,10 @@ public class PaymentActivity extends AppCompatActivity {
 
 
         //Changing ActionBar Color
-        actionBar=getSupportActionBar();
-        SharedPreferences shared = getSharedPreferences(MY_PREFS_COLOR, MODE_PRIVATE);
-        if (shared!=null) {
-            int getColor = (shared.getInt("position", 0));
-            actionBar.setBackgroundDrawable(new ColorDrawable(getColor));
-        }
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         Bundle bundle = getIntent().getExtras();
         if(bundle!=null){
             flowRateValue = bundle.getDouble("flow_rate");
@@ -56,6 +57,12 @@ public class PaymentActivity extends AppCompatActivity {
         monthly.setText(form.format(monthlyValue));
         bill.setText(form.format(billValue));
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        toolbar.setBackgroundColor(Preferences.getInstance().getToolbarColor());
     }
 
     public void initialize()
