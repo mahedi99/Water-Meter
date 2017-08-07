@@ -7,4 +7,5 @@ This app helps the water supplier to calculate bill and notify the user through 
 1. [velocimeterlibrary](https://github.com/glomadrian/velocimeter-view/tree/master/velocimeterlibrary)
 2. [colorpicker](https://github.com/kristiyanP/colorpicker)
 
-
+# Sample:
+![sample-1](https://github.com/mahedi99/Water-Meter/blob/master/sample/Screenshot_2017-08-07-23-38-29.png)
