@@ -8,4 +8,4 @@ This app helps the water supplier to calculate bill and notify the user through 
 2. [colorpicker](https://github.com/kristiyanP/colorpicker)
 
 # Sample:
-![sample-1](https://github.com/mahedi99/Water-Meter/blob/master/sample/one.png) ![sample-2](https://github.com/mahedi99/Water-Meter/blob/master/sample/one.png) ![sample-2](https://github.com/mahedi99/Water-Meter/blob/master/sample/one.png) ![sample-2](https://github.com/mahedi99/Water-Meter/blob/master/sample/one.png)
+![sample-1](https://github.com/mahedi99/Water-Meter/blob/master/sample/one.png) ![sample-2](https://github.com/mahedi99/Water-Meter/blob/master/sample/two.png) ![sample-3](https://github.com/mahedi99/Water-Meter/blob/master/sample/three.png)
