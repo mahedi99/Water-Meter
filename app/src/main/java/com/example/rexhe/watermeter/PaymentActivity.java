@@ -1,9 +1,6 @@
 package com.example.rexhe.watermeter;
 
-import android.content.SharedPreferences;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
@@ -26,8 +23,6 @@ public class PaymentActivity extends AppCompatActivity {
     private float billValue;
 
     private Toolbar toolbar;
-
-    public static final String MY_PREFS_COLOR = "mycolor";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

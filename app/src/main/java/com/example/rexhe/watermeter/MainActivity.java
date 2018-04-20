@@ -1,9 +1,7 @@
 package com.example.rexhe.watermeter;
 
 import android.animation.ValueAnimator;
-import android.annotation.TargetApi;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -17,9 +15,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
-import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -68,7 +64,6 @@ public class MainActivity extends AppCompatActivity{
     private Bundle bundle;
 
     public static final String MY_PREFS_FILE = "loginInfo";
-    public static final String MY_PREFS_COLOR = "mycolor";
 
     private Toolbar toolbar;
 
@@ -80,12 +75,9 @@ public class MainActivity extends AppCompatActivity{
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-//        toolbar.setBackgroundColor(Preferences.getInstance().getToolbarColor());
-
 
         initialize();
         getUpdatedData();
-        //startCountAnimation(78.6f,999.7f);
 
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -98,7 +90,6 @@ public class MainActivity extends AppCompatActivity{
                     @Override
                     public void run() {
                         swipeContainer.setRefreshing(false);
-                        //Toast.makeText(getApplicationContext(), "Up-To-Date", Toast.LENGTH_LONG).show();
                     }
 
                 }, 2000);
@@ -126,7 +117,6 @@ public class MainActivity extends AppCompatActivity{
         dayDigit= (TextView) findViewById(R.id.dayDigit);
         monthDigit= (TextView) findViewById(R.id.monthDigit);
         bundle= new Bundle();
-        //velocimeter.setValue(50, true);
 
     }
     public void getUpdatedData()
@@ -279,10 +269,6 @@ public class MainActivity extends AppCompatActivity{
 
     public void resultPackage(JSONArray jsonArray)
     {
-        /*String userInfo1 = userInfo.get("user_info");
-        String value = userInfo.get("value");
-        velocimeter.setValue(Integer.valueOf(value), true);*/
-
         currentFlowFreq=0;
         dailyConsumedWater=0;
         monthlyConsumedWater=0;
